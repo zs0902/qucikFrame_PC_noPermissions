@@ -1,0 +1,173 @@
+
+/* 此样式文件用于重置elementui 的一些默认样式 */
+
+/* ===========菜单样式============*/
+
+/* // 重置菜单的背景色和右边框颜色 */
+.el-menu {
+  /* // 从默认的#e6e6e6 改为 透明 */
+  border-right: solid 1px transparent; 
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding-left: 0;
+
+  /* // 从默认的#fff 改为 透明 */
+  background-color: transparent; 
+}
+
+/* // 一级菜单悬浮hover背景颜色 */
+.el-submenu__title:hover {
+  background-color: #607a97 !important;
+}
+
+/* // 更改二级菜单选中背景色以及悬停背景色 */
+.el-menu-item.is-active {
+  color: #fff;
+  background-color: #3D7FFF !important;
+}
+
+/* // 二级菜单悬浮hover背景颜色 */
+.el-menu-item:focus, .el-menu-item:hover {
+  outline: 0;
+  background-color: #607a97 !important;
+}
+
+/* // 以下两个样式是重置一级菜单右边下拉指示菜单 */
+.el-submenu__icon-arrow {
+  /* // 原来的配置 */
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -7px;
+  transition: transform .3s;
+  font-size: 12px;
+  
+  /* // 样式实现三角箭头  */
+  border: 5px solid transparent;
+  border-bottom-color: #fff;
+  transform-origin: center 75%;
+}
+
+/* // 去除原来的内容(箭头) */
+.el-icon-arrow-down:before {
+  content: "";
+}
+
+/* // 设置菜单文字样式 */
+.menu_name {
+  color: #FFFFFF;
+}
+
+/* 设置菜单收缩时，弹出子菜单列表的样式 */
+.el-menu--popup-right-start {
+    background: #1B2657  !important;
+    margin-left: 5px;
+}
+
+
+/* ==========移动端菜单容器样式============ */
+.drawer_self .el-drawer {
+    position: absolute;
+    box-sizing: border-box;
+    /* 主要重置这个背景色 */
+    background: linear-gradient(360deg, #0F1630 0%, #1B2657 100%) !important;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 10px -5px rgb(0 0 0 / 20%), 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%);
+    outline: 0;
+}
+
+
+/* =========设置页面tab标签 margin-bottom 为0============ */
+/* 设置 框架上 tabs菜单标签的margin-bottom 为0, 使内容展示区拥有更高的高度 */
+.el-tabs__header {
+    /* 原来样式配置 */
+    padding: 0;
+    position: relative;
+    /* margin: 0 0 15px; */
+
+    /* 样式调整 */
+    margin: 0px;
+}
+
+/* ========统一设置弹窗样式，给表单域加上边框内边距等========= */
+.el-dialog__body {
+    padding: 10px !important;
+    border: 2px solid #f5f5f5;
+    margin: 0 10px 10px;
+    border-radius: 3px;
+}
+
+.el-dialog {
+    /* 上边设置margin过后，解决外边距塌陷的问题 */
+    overflow: hidden; 
+}
+
+.el-select .el-input .el-select__caret {
+    color: #3b3b3b;
+    font-size: 12px;
+    transition: transform .3s;
+    transform: rotateZ(180deg);
+    cursor: pointer;
+}
+
+.el-form-item__label {
+    text-align: right;
+    vertical-align: middle;
+    float: left;
+    font-size: 14px;
+    color: #333;
+    line-height: 40px;
+    padding: 0 12px 0 0;
+    box-sizing: border-box;
+}
+
+.el-dialog__body {
+    padding: 30px 20px;
+    color: #333;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+/* 复选框 边框颜色调整 */
+.el-checkbox__inner {
+    display: inline-block;
+    position: relative;
+    border: 1px solid #999;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    background-color: #FFF;
+    z-index: 1;
+    transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+}
+
+/* 下拉框尾部图标居中 */
+.el-select .el-input .el-select__caret {
+    color: #3b3b3b;
+    font-size: 12px;
+    transition: transform .3s;
+    transform: rotateZ(180deg);
+    cursor: pointer;
+    height: 32px;
+    line-height: 32px;
+}
+
+.el-form-item__content {
+    line-height: 36px;
+    position: relative;
+    font-size: 14px;
+}
+
+.el-form-item__label {
+    text-align: right;
+    vertical-align: middle;
+    float: left;
+    font-size: 14px;
+    color: #333;
+    line-height: 37px;
+    padding: 0 12px 0 0;
+    box-sizing: border-box;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>运营管理后台-供应链</title>
+  </head>
+  <body>
+
+    <!-- 关于项目文件目录说明 -->
+    <div id="app"></div>
+
+    <script>
+      let _origin = location.origin
+      if(_origin.includes('https://scm.18qy.cn')||_origin.includes('http://scm.admin.100bm.cn')){
+        this.title = '运营管理后台-千行供应链'
+      }else{
+        this.title = '运营管理后台-三丰一品供应链'
+      }
+    </script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
