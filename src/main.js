@@ -3,6 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import "@/utility/init.js"
+
 // 引入elementui
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -31,19 +33,20 @@ import GlobalFilter from '@/utility/globalRegister/globalFilter'
 Vue.use(GlobalFilter)
 
 // 引入自定义js 
-import "@/utility/init.js"
 import Validate from "@/utility/validate/validate"
 import {get,post} from '@/utility/http/http'
 import EnumUtility from './utility/enum'
 import DateUtility from "@/utility/date/date"
 import dataget from "@/utility/date/dateget"
 import GetColorByStatus from "@/utility/colorForStatus.js"
+import generalUtil from '@/utility/generalUtil/util.js'
 Vue.prototype.$get = get //全局变量声明，使用方法 this.$get
 Vue.prototype.$post = post
 Vue.prototype.EnumUtility = new EnumUtility()
 Vue.prototype.dateUtility = new DateUtility()
 Vue.prototype.$validate = new Validate()
 Vue.prototype.$dataGet = dataget
+Vue.prototype.generalUtil = generalUtil
 Vue.config.productionTip = false;
 Vue.prototype.$getColorByStatus = GetColorByStatus
 

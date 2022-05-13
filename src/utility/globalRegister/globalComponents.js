@@ -1,5 +1,5 @@
 // 为了防止打包过后入口文件过大，这里只配置需要全局注册的组件
-const ctx = require.context('@/components/Global', true, /.vue$/)
+const ctx = require.context('@/components/_Global', true, /.vue$/)
 
 export default {
     install(vue) {

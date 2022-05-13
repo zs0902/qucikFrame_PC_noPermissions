@@ -2,6 +2,9 @@ export default function DateUtility() { }
 
 DateUtility.prototype.Format = function (fmt, date, UTC) {
     // console.log("fmt is:",fmt,date)
+    if(!date){
+        return null
+    }
     if (!fmt) {
         fmt = fmt || "yyyy-MM-dd HH:mm:ss";
     }

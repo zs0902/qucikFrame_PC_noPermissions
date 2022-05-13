@@ -74,7 +74,23 @@ const list = {
         // 优化过后，可以直接把table 组件的这个方法提取到这里公用
         tableHandle(content) {
             this[content.handleName](content.val)
-        }
+        },
+        // 按条件导出内容
+        exportTableData(title, url) {
+            let data = JSON.parse(JSON.stringify(this.query));
+            delete data.pageSize;
+            delete data.pageNum;
+            this.$post(url, data, { responseType: "blob" }).then(res => {
+                let blob = new Blob([res], { type: "application/vnd.ms-excel" });
+                const link = document.createElement("a");
+                link.style.display = "none";
+                link.href = URL.createObjectURL(blob);
+                link.setAttribute("download", `${title}.xlsx`);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        },
     },
 }
 
